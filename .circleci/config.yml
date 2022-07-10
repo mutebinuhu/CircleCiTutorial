@@ -30,14 +30,9 @@ jobs:
       - image: cimg/base:stable
       steps:
         - checkout
-        - run: echo $CIRCLE_BRANCH 
-
-  print-pipe-id:
-        docker:
-      - image: cimg/base:stable
-      steps:
-        - checkout
-        - run: echo <<pipeline.id>>
+        - run:
+            name: "echo an env var that is part of our project"
+            command: echo $pipeline.id
 
 workflows:
   say-hello-workflow:
