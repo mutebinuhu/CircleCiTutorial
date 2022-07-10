@@ -30,7 +30,9 @@ jobs:
       - image: cimg/base:stable
       steps:
         - checkout
-        - run: echo My name is $MY_NAME
+        - run:
+          name: Echo the env name
+          command: My name is $MY_NAME
 
 workflows:
   say-hello-workflow:
