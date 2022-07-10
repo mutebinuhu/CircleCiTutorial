@@ -31,8 +31,8 @@ jobs:
       steps:
         - checkout
         - run:
-          name: Echo the env name
-          command: My name is $MY_NAME
+          name: "Echo the env name"
+          command: $MY_NAME
 
 workflows:
   say-hello-workflow:
