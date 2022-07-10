@@ -32,7 +32,7 @@ jobs:
         - checkout
         - run:
             name: "echo an env var that is part of our project"
-            command: echo $pipeline.id
+            command: echo $CIRCLE_BUILD_NUM
 
 workflows:
   say-hello-workflow:
