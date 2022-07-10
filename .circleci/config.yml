@@ -30,7 +30,14 @@ jobs:
       - image: cimg/base:stable
       steps:
         - checkout
-        - run: echo $CIRCLE_BRANCH
+        - run: echo $CIRCLE_BRANCH 
+
+  print-pipe-id:
+        docker:
+      - image: cimg/base:stable
+      steps:
+        - checkout
+        - run: echo <<pipeline.id>>
 
 workflows:
   say-hello-workflow:
