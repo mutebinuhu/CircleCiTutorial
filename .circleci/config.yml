@@ -30,7 +30,7 @@ jobs:
       - image: cimg/base:stable
       steps:
         - checkout
-        - run: "helloo $MY_NAME"
+        - run: echo $MY_NAME
 
 workflows:
   say-hello-workflow:
