@@ -30,7 +30,7 @@ jobs:
       - image: cimg/base:stable
       steps:
         - checkout
-        - run: echo $MY_NAME
+        - run: echo $CIRCLE_BRANCH
 
 workflows:
   say-hello-workflow:
