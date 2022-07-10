@@ -31,8 +31,9 @@ jobs:
       steps:
         - checkout
         - run:
-          name: "Echo the env name"
-          command: $MY_NAME
+            name: "echo an env var that is part of our project"
+              command: |
+                echo $MY_NAME
 
 workflows:
   say-hello-workflow:
