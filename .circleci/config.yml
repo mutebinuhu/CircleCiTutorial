@@ -24,6 +24,14 @@ jobs:
     steps:
       - checkout
       - run: echo world
+
+  print-name:
+      docker:
+      - image: cimg/base:stable
+      steps:
+        - checkout
+        - run: echo My name is <<MY_NAME>>
+
 workflows:
   say-hello-workflow:
     jobs:
