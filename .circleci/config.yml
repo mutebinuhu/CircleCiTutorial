@@ -31,7 +31,7 @@ jobs:
       steps:
         - checkout
         - run:
-            name: "echo an env var that is part of our project"
+            name: "My pipeline id is <<pipeline.id>>"
             command: echo $CIRCLE_BUILD_NUM
 
 workflows:
