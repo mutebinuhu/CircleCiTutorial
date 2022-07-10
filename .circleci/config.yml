@@ -37,3 +37,4 @@ workflows:
     jobs:
       - print-world
       - print-hello
+      - print-name
