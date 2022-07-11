@@ -60,7 +60,7 @@ jobs:
       - checkout
       - run:
           name: "Exit with one"
-          command: return 1
+          command: return 0
       - run:
           name: "show on fail"
           command: echo "failed To be executed"
