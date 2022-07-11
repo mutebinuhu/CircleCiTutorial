@@ -25,18 +25,18 @@ jobs:
       - checkout
       - run: echo world
 
-  print-name:
+  save_hello_world_output:
       docker:
       - image: cimg/base:stable
       steps:
         - checkout
         - run:
-            name: "My pipeline id is <<pipeline.id>>"
-            command: echo "<<pipeline.id>>"
+            name: "share files"
+            command: echo "text to output here" > output.txt
 
 workflows:
   say-hello-workflow:
     jobs:
       - print-world
-      - print-hello
-      - print-name
+      - save_hello_world_output
+
