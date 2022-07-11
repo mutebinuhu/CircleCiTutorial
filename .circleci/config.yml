@@ -7,7 +7,7 @@ commands:
     description: "print the pipeline id"
     steps:
       - checkout
-      - run: $CIRCLE_WORKFLOW_ID
+      - run: echo "hei"
   
 
 # Define a job to be invoked later in a workflow.
