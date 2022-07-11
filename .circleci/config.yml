@@ -24,12 +24,6 @@ jobs:
         - run: echo "text to output here" > output.txt  
         - persist_to_workspace:
             paths: output.txt
-  print_output_file:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-
 
 
 workflows:
@@ -37,4 +31,3 @@ workflows:
     jobs:
       - print-hello
       - save_hello_world_output
-      - print_output_file
