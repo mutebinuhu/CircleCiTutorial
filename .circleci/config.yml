@@ -21,9 +21,8 @@ jobs:
       - image: cimg/base:stable
       steps:
         - checkout
-        - persist_to_workspace:
-            - run: mkdir -p workspace
-            - run: echo "Hello, world!" > workspace/echo-output
+        - run: mkdir -p workspace
+        - run: echo "Hello, world!" > workspace/echo-output
 
 
 workflows:
