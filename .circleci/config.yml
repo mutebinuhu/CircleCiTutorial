@@ -29,5 +29,5 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - print-world
+      - print-hello
       - save_hello_world_output
