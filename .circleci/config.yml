@@ -75,4 +75,5 @@ workflows:
           requires:
             - save_hello_world_output
       - test_command
+      - print_error_onfail
 
