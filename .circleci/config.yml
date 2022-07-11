@@ -52,7 +52,7 @@ jobs:
     #reuse command cmd
     steps: 
       - print_pipeline_id
-
+  #hadle a jon while on fail
   print_error_onfail:
     docker:
       - image: circleci/node:13.8.0
@@ -60,7 +60,8 @@ jobs:
       - checkout
       - run:
           name: "Exit with one"
-          command: echo "Dont fail"
+          #command: echo "Dont fail"
+          command: return 1
       - run:
           name: "show on fail"
           command: echo "failed To be executed"
