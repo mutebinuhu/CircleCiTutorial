@@ -2,6 +2,7 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+#commands
 commands:
   print_pipeline_id:
     description: "print the pipeline id"
@@ -48,10 +49,22 @@ jobs:
   test_command:
     docker:
       - image: cimg/base:stable
+    #reuse command cmd
     steps: 
       - print_pipeline_id
 
-
+  print_error_onfail:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - run:
+          name: "Exit with one"
+          command: return 1
+      - run:
+          name: "show on fail"
+          command: echo "failed To be executed"
+          when: on_fail
 
 workflows:
   say-hello-workflow:
