@@ -15,28 +15,22 @@ jobs:
     steps:
       - checkout
       - run: echo hello
+  save_hello_world_output:
+    docker:
+        - image: cimg/base:stable
+    steps:
+
+      run: 
+        name: "Add text to a file"
+        command: echo "Hello world" > output.txt
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-  print-world:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - run: echo world
-
-  print-name:
-      docker:
-      - image: cimg/base:stable
-      steps:
-        - checkout
-        - run:
-            name: "My pipeline id is <<pipeline.id>>"
-            command: echo "<<pipeline.id>>"
 
 workflows:
   say-hello-workflow:
     jobs:
       - print-world
-      - print-hello
-      - print-name
+      - save_hello_world_output
+    
