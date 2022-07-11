@@ -28,6 +28,13 @@ jobs:
             paths:
               - echo-output
 
+  print_output_file:
+    docker:
+      - image: cimg/base:stable
+    steps:
+        - checkout
+        - attach_workspace:
+            at: /tmp/workspace
 
 
 workflows:
