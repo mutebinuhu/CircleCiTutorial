@@ -35,7 +35,7 @@ jobs:
         - checkout
         - attach_workspace:
             at: /tmp/workspace
-        - run: cat /workspace/echo-output.txt
+        - run: cat /tmp/workspace
       
 
 
