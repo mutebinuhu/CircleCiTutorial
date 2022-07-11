@@ -23,7 +23,7 @@ jobs:
         - checkout
         - run: echo "text to output here" > output.txt  
         - persist_to_workspace:
-            paths: output.txt
+            paths: "output.txt"
 
 
 workflows:
